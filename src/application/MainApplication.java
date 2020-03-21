@@ -1,10 +1,9 @@
 package application;
 
-import java.lang.reflect.Field;
-
 import factory.Shoe;
 import shoes.AbstractShoe;
 import shoes.Bettence;
+
 
 public class MainApplication {
 
@@ -13,13 +12,7 @@ public class MainApplication {
        Class bClass = Bettence.class;
        String name = bClass.getName();
        String outPut =   ma.callToShoe(name).getName();
-       System.out.println(outPut);
-       
-       Field field = AbstractShoe.class.getDeclaredField("name");
-       field.setAccessible(true);
-       field.set(AbstractShoe.class.newInstance(), "sample value");
-       System.out.println(field.get(AbstractShoe.class.newInstance()));
-       
+       System.out.println(outPut);    
 	}
 	
 	public AbstractShoe callToShoe(String fullyQualifiedName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
